@@ -1,7 +1,7 @@
-package com.javarush.khmelov.lesson14.controller;
+package com.javarush.khmelov.app.controller;
 
-import com.javarush.khmelov.lesson14.cmd.Command;
-import com.javarush.khmelov.lesson14.config.Winter;
+import com.javarush.khmelov.app.cmd.Command;
+import com.javarush.khmelov.app.config.Winter;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class HttpResolver {

@@ -1,4 +1,4 @@
-package com.javarush.khmelov.lesson14.cmd;
+package com.javarush.khmelov.app.cmd;
 
 import jakarta.servlet.http.HttpServletRequest;
 

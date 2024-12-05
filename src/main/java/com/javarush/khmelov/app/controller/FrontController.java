@@ -1,8 +1,8 @@
-package com.javarush.khmelov.lesson14.controller;
+package com.javarush.khmelov.app.controller;
 
-import com.javarush.khmelov.lesson14.cmd.Command;
-import com.javarush.khmelov.lesson14.config.Winter;
-import com.javarush.khmelov.lesson14.entity.Role;
+import com.javarush.khmelov.app.cmd.Command;
+import com.javarush.khmelov.app.config.Winter;
+import com.javarush.khmelov.app.entity.Role;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,8 +29,12 @@ public class FrontController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Command command = httpResolver.resolve(req);
         String view = command.doGet(req);
-        String jsp = "/WEB-INF/" + view + ".jsp";
+        String jsp = getJsp(view);
         req.getRequestDispatcher(jsp).forward(req, resp);
+    }
+
+    private static String getJsp(String view) {
+        return "/WEB-INF/" + view + ".jsp";
     }
 
     @Override
