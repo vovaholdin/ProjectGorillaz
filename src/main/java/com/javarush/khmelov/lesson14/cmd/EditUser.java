@@ -10,7 +10,11 @@ import java.util.Optional;
 
 public class EditUser implements Command {
 
-    private final UserService userService = Winter.find(UserService.class);
+    private final UserService userService;
+
+    public EditUser(UserService userService) {
+        this.userService = userService;
+    }
 
 
     @Override
