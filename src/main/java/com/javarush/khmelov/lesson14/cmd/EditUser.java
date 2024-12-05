@@ -1,6 +1,5 @@
 package com.javarush.khmelov.lesson14.cmd;
 
-import com.javarush.khmelov.lesson14.config.Winter;
 import com.javarush.khmelov.lesson14.entity.Role;
 import com.javarush.khmelov.lesson14.entity.User;
 import com.javarush.khmelov.lesson14.service.UserService;
@@ -8,6 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.Optional;
 
+
+@SuppressWarnings("unused")
 public class EditUser implements Command {
 
     private final UserService userService;
@@ -44,7 +45,7 @@ public class EditUser implements Command {
             user.setId(Long.parseLong(req.getParameter("id")));
             userService.update(user);
         }
-        return getView()+"?id="+user.getId();
+        return getView() + "?id=" + user.getId();
     }
 
 
