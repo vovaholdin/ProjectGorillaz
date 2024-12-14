@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "question": "Что делает ключевое слово static?",
+    "correctAnswer": "Связывает с классом",
+    "wrongAnswer": "Создает объект"
+  },
+  {
+    "id": 2,
+    "question": "Что возвращает метод hashCode()?",
+    "correctAnswer": "Числовой код",
+    "wrongAnswer": "Текстовое имя"
+  },
+  {
+    "id": 3,
+    "question": "Что такое null в Java?",
+    "correctAnswer": "Значение отсутствия",
+    "wrongAnswer": "Новый объект"
+  },
+  {
+    "id": 4,
+    "question": "Какой интерфейс реализует ArrayList?",
+    "correctAnswer": "List",
+    "wrongAnswer": "Map"
+  },
+  {
+    "id": 5,
+    "question": "Что делает ключевое слово final у переменной?",
+    "correctAnswer": "Делает неизменной",
+    "wrongAnswer": "Дает доступ всем"
+  },
+  {
+    "id": 6,
+    "question": "Как называется метод запуска нового потока?",
+    "correctAnswer": "start()",
+    "wrongAnswer": "run()"
+  },
+  {
+    "id": 7,
+    "question": "Что делает метод equals()?",
+    "correctAnswer": "Сравнивает объекты",
+    "wrongAnswer": "Копирует объекты"
+  }
+]
