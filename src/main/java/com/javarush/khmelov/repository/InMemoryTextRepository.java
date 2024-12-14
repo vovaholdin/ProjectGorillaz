@@ -1,16 +1,13 @@
 package com.javarush.khmelov.repository;
 
 import com.javarush.khmelov.jsonHelper.JsonReader;
-import com.javarush.khmelov.questions.InterviewQuestions;
+import com.javarush.khmelov.questions.laptop.BrokenLaptop;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class InMemoryTextRepository implements TextRepository{
-    private final List<InterviewQuestions> allQuestions;
+    private final List<BrokenLaptop> allQuestions;
     public InMemoryTextRepository(JsonReader reader) throws IOException {
         allQuestions = reader.readQuestionsFromJson();
     }

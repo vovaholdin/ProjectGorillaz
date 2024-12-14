@@ -1,4 +1,4 @@
-package com.javarush.khmelov.questions;
+package com.javarush.khmelov.questions.laptop;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class InterviewQuestions {
+public class BrokenLaptop {
     private int id;
     private String question;
     private String correctAnswer;
