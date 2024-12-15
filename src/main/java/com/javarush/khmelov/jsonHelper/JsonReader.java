@@ -1,25 +1,59 @@
 package com.javarush.khmelov.jsonHelper;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.javarush.khmelov.questions.laptop.BrokenLaptop;
+import com.javarush.khmelov.questions.laptop.GameStep;
 
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class JsonReader {
-    public List<BrokenLaptop> readQuestionsFromJson() throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
+    private Map<Integer, GameStep> stepsMap = new HashMap<>();
 
-        // Получаем поток данных из resources
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("games/broken-laptop.json");
-        if (inputStream == null) {
-            throw new IOException("File not found!");
+    public Map<Integer, GameStep> loadStepsFromJson() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            // Используем ClassLoader для загрузки файла из папки resources
+            ClassLoader classLoader = getClass().getClassLoader();
+            URL resource = classLoader.getResource("games/broken-laptop.json");
+
+            if (resource == null) {
+                throw new IllegalArgumentException("Файл не найден: games/broken-laptop.json");
+            }
+
+            File file = new File(resource.toURI());
+
+            // Создаем объект, в который будем десериализовывать данные
+            GameStepsWrapper wrapper = objectMapper.readValue(file, GameStepsWrapper.class);
+
+            // Сохраняем шаги в HashMap для быстрого доступа по ID
+            for (GameStep step : wrapper.getSteps()) {
+                stepsMap.put(step.getId(), step);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        return stepsMap;
+    }
+
+    // Вспомогательный класс для обертки списка шагов
+    public static class GameStepsWrapper {
+        private List<GameStep> steps;
+
+        public List<GameStep> getSteps() {
+            return steps;
         }
 
-        // Преобразуем JSON непосредственно в List<Question>
-        List<BrokenLaptop> questions = mapper.readValue(inputStream,
-                mapper.getTypeFactory().constructCollectionType(List.class, BrokenLaptop.class));
-        return questions;
+        public void setSteps(List<GameStep> steps) {
+            this.steps = steps;
+        }
     }
 }
