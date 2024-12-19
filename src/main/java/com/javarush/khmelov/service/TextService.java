@@ -35,9 +35,7 @@ public class TextService {
     public Boolean isGameOver(int currentStepId, String selectedOptionText){
         return repository.isGameOver(currentStepId, selectedOptionText);
     }
-    public String getQuestionByStepId(int id){
-        return repository.getQuestionByStepId(id);
-    }
+
 
 
 

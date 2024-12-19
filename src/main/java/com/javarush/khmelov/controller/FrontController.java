@@ -12,7 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet({"", "/home", "/list-user", "/edit-user", "/game-page", "/login-user", "/sign-in"})
+@WebServlet({"", "/home", "/list-user", "/edit-user", "/game-page",
+        "/login-user", "/sign-in", "/win-game", "/lose-game"})
 public class FrontController extends HttpServlet {
 
     private final HttpResolver httpResolver = Winter.find(HttpResolver.class);
@@ -40,4 +41,6 @@ public class FrontController extends HttpServlet {
         String redirect = command.doPost(req);
         resp.sendRedirect(redirect);
     }
+
+
 }

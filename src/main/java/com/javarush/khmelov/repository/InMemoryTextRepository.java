@@ -82,11 +82,6 @@ public class InMemoryTextRepository implements TextRepository{
         return false;
     }
 
-    @Override
-    public String getQuestionByStepId(int id) {
-        GameStep step = allQuestions.get(id);
-        return step != null ? step.getQuestion() : null;
-    }
 
 
 }

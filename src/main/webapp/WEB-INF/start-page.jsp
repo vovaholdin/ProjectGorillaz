@@ -27,7 +27,7 @@
                     <p>Сможете починить ваш ноутбук или прийдется купить новый?!</p>
                     <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
                         <div>
-                            <a href="game-page">
+                            <a href="game-page?id=1">
                                 <button type="button">Играть</button>
                             </a>
                         </div>

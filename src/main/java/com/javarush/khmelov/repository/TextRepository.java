@@ -13,5 +13,4 @@ public interface TextRepository {
     String getResultForOption(int currentStepId, String selectedOptionText); //получение ресультата в виде текста после ответа пользователя
     Boolean shouldRestartGame(int currentStepId, String selectedOptionText); // проверка на рестарт
     Boolean isGameOver(int currentStepId, String selectedOptionText); // проверка на конец игры
-    String getQuestionByStepId(int id); // 2 получение вопроса (временно)
 }
