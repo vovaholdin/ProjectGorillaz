@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Расстояние между кнопками */
+}
+
+button {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
+}
+.link-button {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #333; /* Цвет текста */
+    font-weight: bold;
+    background-color: #fff; /* Цвет фона */
+    padding: 10px 20px; /* Внутренние отступы */
+    border: 2px solid #333; /* Граница */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+}
+
+.link-button:hover {
+    background-color: #333; /* Цвет фона при наведении */
+    color: #fff; /* Цвет текста при наведении */
+}
+

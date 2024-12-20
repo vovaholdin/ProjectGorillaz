@@ -7,6 +7,9 @@ import com.javarush.khmelov.service.TextService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.List;
 
@@ -28,7 +31,7 @@ public class GamePage implements Command {
     public String doPost(HttpServletRequest request) {
         GameRequestParams gameRequestParams = GameRequestParams.parseRequestParameters(request);
         if (gameRequestParams.getResult() != null && !gameRequestParams.getResult().isEmpty()) {
-            return checkWin(gameRequestParams.isEnd());
+            return checkWin(gameRequestParams.isEnd(), gameRequestParams);
         }
         else {
             return "game-page?id=" + gameRequestParams.getId() + "&result=" + gameRequestParams.getResult() +
@@ -48,11 +51,13 @@ public class GamePage implements Command {
 
     }
 
-    public String checkWin(boolean win){
+    public String checkWin(boolean win, GameRequestParams gameRequestParams) {
+        String result = gameRequestParams.getResult();
+        String encodedResult = URLEncoder.encode(result, StandardCharsets.UTF_8);
         if (win){
-            return "win-game";
+            return "win-game?result=" + encodedResult;
         } else
-            return "lose-game";
+            return "lose-game?result=" + encodedResult;
     }
 
 

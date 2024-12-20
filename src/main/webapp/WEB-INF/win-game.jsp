@@ -8,10 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/result-game.css">
+    <title>Победа</title>
 </head>
 <body>
-you win
+<!-- Атрибут result -->
+<h1>${requestScope.result}</h1>
 
+<!-- Кнопки -->
+<div class="buttons">
+    <a href="game-page?id=1" class="link-button">Начать заново</a>
+    <a href="/" class="link-button">Вернуться на главную</a>
+</div>
 </body>
 </html>
