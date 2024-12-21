@@ -2,15 +2,14 @@ package com.javarush.khmelov.cmd;
 
 import com.javarush.khmelov.entity.Role;
 import com.javarush.khmelov.entity.User;
+import com.javarush.khmelov.service.TextService;
 import com.javarush.khmelov.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 
-import java.util.Collection;
-
-public class LoginUser implements Command {
+public class RegisterUser implements Command {
     private final UserService userService;
 
-    public LoginUser(UserService userService) {
+    public RegisterUser(UserService userService) {
         this.userService = userService;
     }
 
@@ -19,12 +18,18 @@ public class LoginUser implements Command {
         String username = request.getParameter("login");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        Collection<User> allUsers = userService.getAll();
-        for (User user : allUsers) {
-            if (password.equals(user.getPassword()) && email.equals(user.getEmail()) && username.equals(user.getLogin())) {
-                request.getSession().setAttribute("user", user);
-                return "/";
-            }
+        User user = User.builder()
+                .login(username)
+                .email(email)
+                .password(password)
+                .role(Role.USER)
+                .build();
+        if (userService.isUserInMemory(user)) {
+            System.err.println("This login already exists");
+        } else {
+            userService.create(user);
+            request.getSession().setAttribute("user", user);
+            return "/";
         }
         return getView();
     }

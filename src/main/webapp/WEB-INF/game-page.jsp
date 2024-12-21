@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="head.jsp" %>
 <html lang="en">
 <head>
@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets/css/game-page.css">
 </head>
 <body>
+
+
 <!-- Вопрос по центру -->
 <h1>${requestScope.question}</h1>
 

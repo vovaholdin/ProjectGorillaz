@@ -1,49 +1,144 @@
-/* Стили для header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+header {
     background-color: #333;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    position: fixed; /* Закрепляем сверху */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Чтобы меню было поверх остального контента */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo-text {
-    color: #fff;
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navigation li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navigation a {
     text-decoration: none;
-    font-size: 1.5em;
+    color: white;
+    font-size: 16px;
+}
+
+.navigation a:hover {
+    color: #00aced;
+}
+
+/* Добавим отступ для основного контента, чтобы меню не перекрывало текст */
+body {
+    margin: 0;
+    padding-top: 60px; /* Высота header + небольшой отступ */
+}
+
+
+/*footer*/
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 36px;
     font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.nav-links {
+.row {
     display: flex;
-    gap: 20px;
+    flex-direction: column; /* Карточки располагаются вертикально */
+    align-items: flex-start; /* Выравнивание по левому краю */
 }
 
-.nav-link {
+.col {
+    width: 100%; /* Растягиваем карточки по ширине родителя */
+    max-width: 400px; /* Ограничиваем ширину карточки */
+}
+
+.p-4 {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-bottom: 20px; /* Добавляем отступы между карточками */
+    padding: 20px; /* Увеличенные отступы внутри рамки */
+}
+
+.p-4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px; /* Отступ между заголовком и текстом */
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.badge {
+    font-size: 14px;
+    padding: 8px 12px;
+    background-color: #007bff;
     color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: normal;
-    transition: color 0.3s, transform 0.3s;
+    border-radius: 50px;
 }
 
-.nav-link:hover {
-    color: #f4f4f9;
-    transform: scale(1.1);
+button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Добавим адаптивность */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
+button:hover {
+    background-color: #0056b3;
 }
+
+.rounded-circle {
+    border: 2px solid #ddd;
+    padding: 3px;
+    object-fit: cover;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.fit-cover {
+    border-radius: 50%;
+}
+
+.text-center {
+    color: #333;
+    margin-bottom: 20px;
+}
+

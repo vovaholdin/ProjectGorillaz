@@ -16,7 +16,7 @@ public class InMemoryUserRepository implements UserRepository<User> {
     public static final AtomicLong id = new AtomicLong(System.currentTimeMillis());
 
     public InMemoryUserRepository() {
-        map.put(0L, new User(0L, "Vova", "qwerty", Role.ADMIN));
+        map.put(0L, new User("goldin@gmail.com", 0L, "Vova", "qwerty", Role.ADMIN));
 
     }
 

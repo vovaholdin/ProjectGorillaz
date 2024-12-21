@@ -5,8 +5,10 @@ import com.javarush.khmelov.entity.User;
 
 import java.util.Collection;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class UserService {
+    public final AtomicLong idGenerator = new AtomicLong(0);
 
     private final InMemoryUserRepository userRepository;
 
@@ -32,5 +34,16 @@ public class UserService {
 
     public Optional<User> get(long id) {
         return userRepository.get(id);
+    }
+
+    public boolean isUserInMemory(User user) {
+        Collection<User> allUsers = getAll();
+        String login = user.getLogin();
+        for (User u : allUsers) {
+            if (u.getLogin().equals(login)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
