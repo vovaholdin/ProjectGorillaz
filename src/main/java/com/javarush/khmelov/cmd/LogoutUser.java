@@ -4,8 +4,8 @@ import jakarta.servlet.http.HttpServletRequest;
 
 public class LogoutUser implements Command {
     @Override
-    public String doGet(HttpServletRequest request) {
+    public String doPost(HttpServletRequest request) {
         request.getSession().invalidate();
-        return "/start-page";
+        return "/";
     }
 }
