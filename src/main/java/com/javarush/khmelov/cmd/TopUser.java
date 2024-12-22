@@ -7,11 +7,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.util.Collection;
 
 @SuppressWarnings("unused")
-public class ListUser implements Command {
+public class TopUser implements Command {
 
     private final UserService userService;
 
-    public ListUser(UserService userService) {
+    public TopUser(UserService userService) {
         this.userService = userService;
     }
 

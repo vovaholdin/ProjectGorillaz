@@ -1,8 +1,7 @@
 package com.javarush.khmelov.jsonHelper;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.javarush.khmelov.questions.laptop.GameStep;
+import com.javarush.khmelov.game.laptop.GameStep;
 
 import java.io.File;
 import java.io.IOException;

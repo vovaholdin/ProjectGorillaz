@@ -20,7 +20,7 @@
         </form>
         <ul>
             <li><a href="/">Главное меню</a></li>
-            <li><a href="list-user">Пользователи</a></li>
+            <li><a href="top-user">Пользователи</a></li>
             <c:choose>
                 <c:when test="${not empty sessionScope.user}">
                     <!-- Если пользователь есть в сессии, показываем выход -->

@@ -53,13 +53,16 @@
 <!-- Header с навигационным меню -->
 <header>
     <nav class="navigation">
+        <form action="/logout-user" method="POST" id="logoutForm" style="display: none;">
+            <button type="submit" class="btn btn-link">Выйти из аккаунта</button>
+        </form>
         <ul>
             <li><a href="/">Главное меню</a></li>
-            <li><a href="list-user">Пользователи</a></li>
+            <li><a href="top-user">Пользователи</a></li>
             <c:choose>
                 <c:when test="${not empty sessionScope.user}">
                     <!-- Если пользователь есть в сессии, показываем выход -->
-                    <li><a href="logout-user">Выйти из аккаунта</a></li>
+                    <li><a href="#" onclick="document.getElementById('logoutForm').submit();">Выйти из аккаунта</a></li>
                 </c:when>
                 <c:otherwise>
                     <!-- Если пользователя нет в сессии, показываем регистрацию -->
@@ -70,3 +73,9 @@
         </ul>
     </nav>
 </header>
+<%--<script>--%>
+<%--    function startGame(gameId) {--%>
+<%--        // Переход на страницу игры с параметром--%>
+<%--        window.location.href = "game-page?id=" + gameId;--%>
+<%--    }--%>
+<%--</script>--%>

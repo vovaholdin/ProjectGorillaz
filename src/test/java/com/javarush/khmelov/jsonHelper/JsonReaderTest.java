@@ -1,6 +1,6 @@
 package com.javarush.khmelov.jsonHelper;
 
-import com.javarush.khmelov.questions.laptop.GameStep;
+import com.javarush.khmelov.game.laptop.GameStep;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;

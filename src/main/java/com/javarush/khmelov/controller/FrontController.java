@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet({"", "/home", "/list-user", "/edit-user", "/game-page",
+@WebServlet({"", "/home", "/top-user", "/edit-user", "/game-page",
         "/login-user", "/register-user", "/win-game", "/lose-game", "/logout-user"})
 public class FrontController extends HttpServlet {
 

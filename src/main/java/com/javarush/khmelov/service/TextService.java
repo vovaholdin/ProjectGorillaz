@@ -1,9 +1,8 @@
 package com.javarush.khmelov.service;
 
-import com.javarush.khmelov.questions.laptop.GameStep;
-import com.javarush.khmelov.questions.laptop.Option;
+import com.javarush.khmelov.game.laptop.GameStep;
+import com.javarush.khmelov.game.laptop.Option;
 import com.javarush.khmelov.repository.InMemoryTextRepository;
-import com.javarush.khmelov.repository.TextRepository;
 
 import java.util.List;
 

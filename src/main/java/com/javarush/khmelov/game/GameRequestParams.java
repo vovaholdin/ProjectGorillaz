@@ -1,4 +1,4 @@
-package com.javarush.khmelov.questions;
+package com.javarush.khmelov.game;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;

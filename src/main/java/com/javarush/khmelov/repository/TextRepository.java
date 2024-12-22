@@ -1,7 +1,7 @@
 package com.javarush.khmelov.repository;
 
-import com.javarush.khmelov.questions.laptop.GameStep;
-import com.javarush.khmelov.questions.laptop.Option;
+import com.javarush.khmelov.game.laptop.GameStep;
+import com.javarush.khmelov.game.laptop.Option;
 
 import java.util.List;
 

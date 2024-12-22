@@ -1,16 +1,12 @@
 package com.javarush.khmelov.cmd;
 
-import com.javarush.khmelov.questions.GameRequestParams;
-import com.javarush.khmelov.questions.laptop.GameStep;
-import com.javarush.khmelov.questions.laptop.Option;
+import com.javarush.khmelov.game.GameRequestParams;
+import com.javarush.khmelov.game.laptop.Option;
 import com.javarush.khmelov.service.TextService;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Collection;
 import java.util.List;
 
 public class GamePage implements Command {

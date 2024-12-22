@@ -1,4 +1,4 @@
-package com.javarush.khmelov.questions.laptop;
+package com.javarush.khmelov.game.laptop;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

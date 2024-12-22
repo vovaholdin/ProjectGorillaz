@@ -1,7 +1,7 @@
 package com.javarush.khmelov.repository;
 
 import com.javarush.khmelov.jsonHelper.JsonReader;
-import com.javarush.khmelov.questions.laptop.GameStep;
+import com.javarush.khmelov.game.laptop.GameStep;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

@@ -2,11 +2,9 @@ package com.javarush.khmelov.repository;
 
 import com.javarush.khmelov.entity.Role;
 import com.javarush.khmelov.entity.User;
+import com.javarush.khmelov.game.StatisticUser;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class InMemoryUserRepository implements UserRepository<User> {
@@ -16,7 +14,8 @@ public class InMemoryUserRepository implements UserRepository<User> {
     public static final AtomicLong id = new AtomicLong(System.currentTimeMillis());
 
     public InMemoryUserRepository() {
-        map.put(0L, new User("goldin@gmail.com", 0L, "Vova", "qwerty", Role.ADMIN));
+
+        map.put(0L, new User("goldin@gmail.com", 0L, "Vova", "qwerty", Role.ADMIN, new StatisticUser(999, 999, 999)));
 
     }
 
@@ -33,6 +32,7 @@ public class InMemoryUserRepository implements UserRepository<User> {
     @Override
     public void create(User entity) {
         entity.setId(id.incrementAndGet());
+        entity.setStatisticUsers(new StatisticUser(0,0,0));
         update(entity);
     }
 
