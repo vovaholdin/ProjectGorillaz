@@ -81,6 +81,11 @@
 </head>
 
 <body>
+<c:if test="${not empty param.alertMessage}">
+    <script>
+        alert('<c:out value="${param.alertMessage}"/>');
+    </script>
+</c:if>
 <div class="container">
     <div class="login-card">
         <div class="icon">

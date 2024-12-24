@@ -53,7 +53,7 @@
                         <h4>Ваш ноутбук стал плохо работать</h4>
                         <p>Сможете починить ваш ноутбук или прийдется купить новый?!</p>
                         <div class="d-flex">
-                            <img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+<%--                            <img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">--%>
                             <div>
                                 <!-- Кнопка для игры -->
                                 <button type="button" onclick="startGame(1)">Играть</button>

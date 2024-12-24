@@ -5,6 +5,9 @@ import com.javarush.khmelov.entity.User;
 import com.javarush.khmelov.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 
 public class LoginUser implements Command {
@@ -26,6 +29,8 @@ public class LoginUser implements Command {
                 return "/";
             }
         }
-        return getView();
+        String alertMessage;
+        alertMessage = URLEncoder.encode("Неверный логин или пароль. Попробуйте снова.", StandardCharsets.UTF_8);
+        return getView() + "?alertMessage=" + alertMessage;
     }
 }

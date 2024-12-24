@@ -7,6 +7,8 @@ import com.javarush.khmelov.service.TextService;
 import com.javarush.khmelov.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -31,12 +33,14 @@ public class RegisterUser implements Command {
                 .statisticUsers(new StatisticUser(0,0,0))
                 .build();
         if (userService.isUserInMemory(user)) {
-            System.err.println("This login already exists");
+            String alertMessage;
+            alertMessage = URLEncoder.encode("Такой пользователь уже зарегистрирован.", StandardCharsets.UTF_8);
+            return getView() +"?alertMessage=" + alertMessage;
         } else {
             userService.create(user);
             request.getSession().setAttribute("user", user);
             return "/";
         }
-        return getView();
+//        return getView();
     }
 }
