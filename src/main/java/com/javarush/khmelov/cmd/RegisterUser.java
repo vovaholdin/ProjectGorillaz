@@ -41,6 +41,5 @@ public class RegisterUser implements Command {
             request.getSession().setAttribute("user", user);
             return "/";
         }
-//        return getView();
     }
 }
